@@ -67,5 +67,35 @@ public class ActionClassTest extends TestBase {
         actions.sendKeys(Keys.PAGE_UP).perform();
 
     }
+    @Test
+    public void buyukKucukYazma(){
+        driver.get("http://google.com");
+        WebElement search=driver.findElement(By.name("q"));
 
+        //standart yazma methodumuz
+      //  search.sendKeys("merhaba nasilsiniz live channel");
+        Actions actions = new Actions(driver);
+
+        actions.moveToElement(search).click()
+                .keyDown(Keys.SHIFT)
+                .sendKeys("merhaba")
+                .keyUp(Keys.SHIFT)
+                .sendKeys(" nasilsiniz")
+                .perform();
+
+    }
+    @Test
+    public void dragAndDrop(){
+        driver.get("http://google.com");
+        WebElement search=driver.findElement(By.name("q"));
+
+        WebElement googleimg=driver.findElement(By.id("hplogo"));
+
+
+
+        //suruklemek istedigin element'i , ve suruklemek istedigin yerde ki elemet
+
+
+
+    }
 }
